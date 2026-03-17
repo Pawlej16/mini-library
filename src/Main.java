@@ -12,5 +12,17 @@ public class Main {
         b1.borrow();
         b1.borrow();
         b1.returnBook();
+
+        System.out.println("------------------------");
+
+        Reader r1 = new Reader("John", "Kowalski", 123, 0);
+        Reader r2 = new Reader("Anna", "Smith", 678, 1);
+
+        r1.increaseBorrowedCount();
+        r2.decreaseBorrowedCount();
+
+        r1.printData();
+        r2.printData();
+
     }
 }
