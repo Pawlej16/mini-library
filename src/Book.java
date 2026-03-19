@@ -36,4 +36,12 @@ public class Book {
             System.out.println("Book "  + title + " was not borrowed.");
         }
     }
+
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public String getTitle() {
+        return title;
+    }
 }
