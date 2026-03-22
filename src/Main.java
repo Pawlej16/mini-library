@@ -1,28 +1,29 @@
 public class Main {
     public static void main(String[] args) {
-        
-        Book b1 = new Book("Dune", "Frank Herbert", 600, true);
+
+        Library library = new Library(10);
+
+        Book b1 = new Book("Dune", "Frank Herbert", 500, true);
         Book b2 = new Book("Hobbit", "J.R.R. Tolkien", 300, true);
-        Book b3 = new Book("1984", "George Orwell", 250, false);
+        Book b3 = new Book("Metro 2033", "Dmitry Glukhovsky", 450, true);
 
-        b1.printInfo();
-        b2.printInfo();
-        b3.printInfo();
+        library.addBook(b1);
+        library.addBook(b2);
+        library.addBook(b3);
 
-        b1.borrow();
-        b1.borrow();
-        b1.returnBook();
+        Reader r1 = new Reader("Antony", "Matheus", 123, 0);
 
-        System.out.println("------------------------");
+        System.out.println("=== Before borrowing ===");
+        library.printAvailableBooks();
 
-        Reader r1 = new Reader("John", "Kowalski", 123, 0);
-        Reader r2 = new Reader("Anna", "Smith", 678, 1);
+        library.borrowBook("Hobbit", r1);
 
-        r1.increaseBorrowedCount();
-        r2.decreaseBorrowedCount();
+        System.out.println("=== After borrowing ===");
+        library.printAvailableBooks();
 
-        r1.printData();
-        r2.printData();
+        library.returnBook("Hobbit", r1);
 
+        System.out.println("=== After returning ===");
+        library.printAvailableBooks();
     }
 }
