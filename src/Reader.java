@@ -11,6 +11,11 @@ public class Reader {
         this.borrowedCount = borrowedCount;
     }
 
+    public String getFullName(){
+        String fullName = (firstName + " " + lastName);
+        return fullName;
+    }
+
     public void printData(){
         System.out.println("Reader: " + firstName + " " + lastName + ".");
         System.out.println("Card number: " + cardNumber);
